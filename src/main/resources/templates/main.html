@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>번호</th>
+        <th>아이디</th>
+        <th>제목</th>
+        <th>카테고리</th>
+    </tr>
+    <tr th:each="board : ${boardList}">
+        <td th:text="${board.boardId}"></td>
+        <td th:text="${board.userId}"></td>
+        <td th:text="${board.title}"></td>
+        <td th:text="${board.categoryName}"></td>
+    </tr>
+</table>
+</body>
+</html>

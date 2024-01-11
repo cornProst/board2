@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.board2.mapper.BoardMapper">
+    <select id="selectBoards" resultType="com.example.board2.dto.BoardDTO">
+        SELECT
+        boardId, userId, userPw, title, content, c.categoryName AS categoryName
+        FROM
+        board b
+        INNER JOIN category c on c.categoryId = b.categoryId
+        <if test="boardId != null">
+            WHERE boardId = #{boardId}
+        </if>
+    </select>
+
+</mapper>
